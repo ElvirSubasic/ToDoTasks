@@ -1,0 +1,21 @@
+<template>
+    <div>
+        <div>My To Do List</div>
+        <div>
+            <input type="text" placeholder="Placeholder text…" required="" class="slds-input" name="input1" onchange={names} value={name}/>
+            <button class="slds-button slds-button_neutral" onclick={addTask}>Add</button>
+        </div>
+    </div>
+
+    <!-- <template for:each={savedToDos} for:item="element" if:true={showtasks}>
+        <p key={element.id}>{element.name}</p>
+    </template> -->
+
+    <lightning-datatable
+        key-field="Id"
+        data={savedToDos}
+        columns={columsrow}
+        onsave={handleSave}
+        draft-values={draftValues}>
+    </lightning-datatable>
+</template>
